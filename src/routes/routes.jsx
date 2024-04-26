@@ -5,6 +5,9 @@ import PageNotFound from "../pages/PageNotFound";
 import AllTouristSpots from "../pages/AddTouristSpot";
 import AddTouristSpot from "../pages/AddTouristSpot";
 import MyList from "../pages/MyList";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -22,11 +25,19 @@ export const router = createBrowserRouter([
         },
         {
             path: '/add-tourist-spots',
-            element: <AddTouristSpot/>
+            element: <ProtectedRoutes><AddTouristSpot/></ProtectedRoutes>
         },
         {
             path: '/lists',
-            element: <MyList/>
+            element: <ProtectedRoutes> <MyList/></ProtectedRoutes>
+        },
+        {
+            path:'/register',
+            element: <Register/>
+        },
+        {
+            path: 'login',
+            element: <Login/>
         }
       ]
     },
