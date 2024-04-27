@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
 import AllTouristSpots from "../pages/AllTouristSpots";
+import Details from "../pages/Details";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,13 @@ export const router = createBrowserRouter([
         path: "/spots",
         element: <AllTouristSpots />,
       },
+      {
+        path: '/details/:id',
+        element: <ProtectedRoutes>
+           <Details/>
+        </ProtectedRoutes>,
+        loader: ({params})=> fetch(`http://localhost:3000/landmarks/${params.id}`)
+      }
     ],
   },
 ]);

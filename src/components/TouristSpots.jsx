@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MdMyLocation } from "react-icons/md";
+import PropTypes from 'prop-types'
 
 const TouristSpots = ({ spot }) => {
   const {
@@ -8,12 +9,8 @@ const TouristSpots = ({ spot }) => {
     spot_name,
     location,
     average_cost,
-    travel_time,
-    visitor_per_year,
     seasonality,
     country_name,
-    email,
-    user,
     description,
   } = spot;
   return (
@@ -42,7 +39,7 @@ const TouristSpots = ({ spot }) => {
             <small className="font-extrabold">{location}</small>
           </p>
           <div className="card-actions justify-center">
-            <Link>
+            <Link to= {`/details/${_id}`}>
               <button className=" bg-[#135D66] glass btn btn-wide text-white">
                 View Details
               </button>
@@ -53,5 +50,16 @@ const TouristSpots = ({ spot }) => {
     </main>
   );
 };
-
+TouristSpots.propTypes = {
+  spot: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    spot_name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    average_cost: PropTypes.number.isRequired,
+    seasonality: PropTypes.string.isRequired,
+    country_name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default TouristSpots;
