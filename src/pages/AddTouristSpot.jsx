@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 const AddTouristSpot = () => {
     const handleAddSpots = e =>{
         e.preventDefault()
@@ -15,8 +16,30 @@ const AddTouristSpot = () => {
         const user = form.user.value;
         const description = form.description.value;
 
-       const a = {imageURL,spot_name,location,average_cost,travel_time,visitor_per_year,seasonality,country_name,email,user,description}
-       console.log(a);
+       const newLandmark = {imageURL,spot_name,location,average_cost,travel_time,visitor_per_year,seasonality,country_name,email,user,description}
+       console.log(newLandmark);
+       form.reset()
+
+      //  send data to the server
+      fetch(`http://localhost:3000/landmarks`,{
+        method: 'POST',
+        headers:{
+          'content-type':'application/json'
+        },
+        body: JSON.stringify(newLandmark)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data);
+        if(data.insertedId){
+          Swal.fire({
+            title: 'Success!',
+            text: 'User Added successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+        }
+      })
     }
   return (
     <main>
