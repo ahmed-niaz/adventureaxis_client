@@ -22,11 +22,16 @@ const Register = () => {
   } = useForm({ mode: "onChange" });
   const onSubmit = (data) => {
     const { email, password, fullName, photoURL } = data;
-    registerUser(email, password).then(() => {
+    registerUser(email, password)
+    .then(() => {
+      const user = {email}
       updateUserProfile(fullName, photoURL).then(() => {
         navigate(from);
       });
-    });
+    })
+    .catch(error =>{
+      console.error(error)
+    })
   };
 
   return (
