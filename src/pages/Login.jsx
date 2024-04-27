@@ -1,19 +1,20 @@
 // import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { BsEyeFill } from "react-icons/bs";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { useState } from "react";
 // import SocialLogin from "../components/SocialLogin";
-// import useAuth from "../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
+import SocialLogin from "../components/SocialLogin";
 
 
 
 const Login = () => {
-    // const {loginUser} = useAuth()
-//     const navigate = useNavigate();
-//   const location = useLocation();
-//   const from = location?.state || "/";
+    const {loginUser} = useAuth()
+    const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 const [open, setOpen] = useState(false);
 const toggle = () => {
   setOpen(!open);
@@ -25,13 +26,13 @@ const toggle = () => {
       } = useForm();
       const onSubmit = (data) => {
         const { email, password } = data;
-        console.log(email,password);
-        // loginUser(email, password)
-        // .then((result) => {
-        //     if (result.user) {
-        //       navigate(from);
-        //     }
-        //   });
+       
+        loginUser(email, password)
+        .then((result) => {
+            if (result.user) {
+              navigate(from);
+            }
+          });
           
       };
     return (
@@ -103,7 +104,7 @@ const toggle = () => {
                 </Link>
               </small>
             </form>
-            {/* <SocialLogin /> */}
+            <SocialLogin />
           </div>
         </div>
       </div>

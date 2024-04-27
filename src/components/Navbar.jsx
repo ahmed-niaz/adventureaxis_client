@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/FirebaseProvider";
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const links = (
     <>
@@ -21,14 +21,14 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/tourist-spots"
+          to="/spots"
           className={({ isActive }) =>
             isActive
               ? "border-2 rounded border-[#135D66] bg-none text-sm font-bold text-[#135D66]"
               : "text-sm font-bold hover:"
           }
         >
-          All Tourist Spot
+          All Tourist Spots
         </NavLink>
       </li>
       <li>
@@ -110,7 +110,7 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           ></div>
-         {user ? (
+          {user ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">

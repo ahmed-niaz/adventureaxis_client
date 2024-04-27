@@ -23,15 +23,16 @@ const Register = () => {
   const onSubmit = (data) => {
     const { email, password, fullName, photoURL } = data;
     registerUser(email, password)
-    .then(() => {
-      const user = {email}
-      updateUserProfile(fullName, photoURL).then(() => {
-        navigate(from);
+      .then(() => {
+        const user = { email };
+        console.log(user);
+        updateUserProfile(fullName, photoURL).then(() => {
+          navigate(from);
+        });
+      })
+      .catch((error) => {
+        console.error(error);
       });
-    })
-    .catch(error =>{
-      console.error(error)
-    })
   };
 
   return (

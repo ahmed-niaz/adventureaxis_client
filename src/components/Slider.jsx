@@ -64,9 +64,6 @@ const Slider = () => {
             <div className="h-full flex flex-col md:flex-row justify-between md:gap-2 gap-10 items-center ">
               <div className="flex-1 mt-10 md:mt-0 w-full md:w-auto">
                 <p className="font-semibold text-[#135D66] mb-3 text-center md:text-left">
-                  <span className="bg-[#135D66] text-white mr-3 text-xl px-2 py-1 rounded-full">
-                    <i className="bx bxs-hot"></i>
-                  </span>
                   Most Visited Places
                 </p>
 
