@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
 import AllTouristSpots from "../pages/AllTouristSpots";
 import Details from "../pages/Details";
+import UpdateInfo from "../components/UpdateInfo";
 
 
 export const router = createBrowserRouter([
@@ -64,6 +65,16 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:3000/landmarks/${params.id}`),
       },
+      {
+        path: '/update/:id',
+        element: (
+          <ProtectedRoutes>
+            <UpdateInfo/>
+          </ProtectedRoutes>
+        ),
+        loader: ({ params }) =>
+        fetch(`http://localhost:3000/landmarks/${params.id}`),
+      }
     ],
   },
 ]);

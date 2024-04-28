@@ -54,7 +54,7 @@ const MyList = () => {
                 <td>{landmark.location}</td>
                 <td>{landmark.seasonality}</td>
                 <td>
-                  <Link>
+                  <Link to={`/update/${landmark._id}`}>
                     <button className="btn glass bg-[#165D66]">Update</button>
                   </Link>
                 </td>

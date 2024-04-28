@@ -2,8 +2,20 @@ import { useLoaderData } from "react-router-dom";
 import { IoLocationSharp } from "react-icons/io5";
 import { GiMoneyStack } from "react-icons/gi";
 
+
 const Details = () => {
   const landmarks = useLoaderData();
+  // const {id}= useParams()
+ 
+  // const [spots,setSpots] = useState({})
+  // useEffect(()=>{
+  //   fetch(`http://localhost:3000/lists/${id}`)
+  //   .then(res =>res.json())
+  //   .then(data => {
+  //     setSpots(data)
+  //     console.log(data);
+  //   })
+  // },[id])
   const {
     imageURL,
     spot_name,
