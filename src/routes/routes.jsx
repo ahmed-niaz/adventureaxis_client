@@ -11,7 +11,6 @@ import AllTouristSpots from "../pages/AllTouristSpots";
 import Details from "../pages/Details";
 import UpdateInfo from "../components/UpdateInfo";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -66,15 +65,15 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:3000/landmarks/${params.id}`),
       },
       {
-        path: '/update/:id',
+        path: "/update/:id",
         element: (
           <ProtectedRoutes>
-            <UpdateInfo/>
+            <UpdateInfo />
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-        fetch(`http://localhost:3000/landmarks/${params.id}`),
-      }
+          fetch(`http://localhost:3000/landmarks/${params.id}`),
+      },
     ],
   },
 ]);

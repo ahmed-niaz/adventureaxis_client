@@ -13,21 +13,33 @@ const MyList = () => {
   );
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/lists/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-            Swal.fire({
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/lists/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
                 title: "Deleted!",
-                text: "Your coffee deleted form the oreder list",
+                text: "The information is deleted",
                 icon: "success",
               });
-          const remainingList = lists.filter((list) => list._id !== id);
-          setLists(remainingList);
-        }
-      });
+              const remainingList = lists.filter((list) => list._id !== id);
+              setLists(remainingList);
+            }
+          });
+      }
+    });
   };
 
   return (

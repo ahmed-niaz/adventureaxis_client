@@ -2,20 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import { IoLocationSharp } from "react-icons/io5";
 import { GiMoneyStack } from "react-icons/gi";
 
-
 const Details = () => {
   const landmarks = useLoaderData();
-  // const {id}= useParams()
- 
-  // const [spots,setSpots] = useState({})
-  // useEffect(()=>{
-  //   fetch(`http://localhost:3000/lists/${id}`)
-  //   .then(res =>res.json())
-  //   .then(data => {
-  //     setSpots(data)
-  //     console.log(data);
-  //   })
-  // },[id])
   const {
     imageURL,
     spot_name,
@@ -55,30 +43,46 @@ const Details = () => {
                 <span>
                   <GiMoneyStack />{" "}
                 </span>
-               <span className="font-extrabold text-black text-4xl"> {average_cost}</span>
+                <span className="font-extrabold text-black text-4xl">
+                  {" "}
+                  {average_cost}
+                </span>
               </p>
               <p className="flex items-center justify-center">
                 <span>
                   <GiMoneyStack />{" "}
                 </span>
-                <span className="font-extrabold text-black text-4xl"> {travel_time}</span>
+                <span className="font-extrabold text-black text-4xl">
+                  {" "}
+                  {travel_time}
+                </span>
               </p>
               <p className="flex items-center justify-center">
                 <span>
                   <GiMoneyStack />{" "}
                 </span>
-                <span className="font-extrabold text-black text-4xl"> {visitor_per_year}</span> 
+                <span className="font-extrabold text-black text-4xl">
+                  {" "}
+                  {visitor_per_year}
+                </span>
               </p>
               <p className="flex items-center justify-center">
                 <span>
                   <GiMoneyStack />{" "}
                 </span>
-                <span className="font-extrabold text-black text-4xl"> {seasonality}</span> 
+                <span className="font-extrabold text-black text-4xl">
+                  {" "}
+                  {seasonality}
+                </span>
               </p>
             </div>
             <div>
-                <h2 className="font-extrabold text-black text-xl text-center">{user}</h2>
-                <h2 className="font-extrabold text-black text-xl text-center">{email}</h2>
+              <h2 className="font-extrabold text-black text-xl text-center">
+                {user}
+              </h2>
+              <h2 className="font-extrabold text-black text-xl text-center">
+                {email}
+              </h2>
             </div>
           </div>
         </div>

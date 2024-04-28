@@ -1,50 +1,61 @@
-import Swal from 'sweetalert2'
-import useAuth from '../hooks/useAuth';
+import Swal from "sweetalert2";
+import useAuth from "../hooks/useAuth";
 const AddTouristSpot = () => {
-  const {user} = useAuth()
-  console.log(user);
+  const { user } = useAuth();
 
-    const handleAddSpots = e =>{
-        e.preventDefault()
-        
-        const form = e.target;
-        const imageURL = form.imageURL.value;
-        const spot_name = form.spot_name.value;
-        const location = form.location.value;
-        const average_cost = form.average_cost.value;
-        const travel_time = form.travel_time.value;
-        const visitor_per_year = form.visitor_per_year.value;
-        const seasonality = form.seasonality.value;
-        const country_name = form.country_name.value;
-        const email = form.email.value;
-        const user = form.user.value;
-        const description = form.description.value;
+  const handleAddSpots = (e) => {
+    e.preventDefault();
 
-       const newLandmark = {imageURL,spot_name,location,average_cost,travel_time,visitor_per_year,seasonality,country_name,email,user,description}
-       console.log(newLandmark);
-       form.reset()
+    const form = e.target;
+    const imageURL = form.imageURL.value;
+    const spot_name = form.spot_name.value;
+    const location = form.location.value;
+    const average_cost = form.average_cost.value;
+    const travel_time = form.travel_time.value;
+    const visitor_per_year = form.visitor_per_year.value;
+    const seasonality = form.seasonality.value;
+    const country_name = form.country_name.value;
+    const email = form.email.value;
+    const user = form.user.value;
+    const description = form.description.value;
 
-      //  send data to the server
-      fetch(`http://localhost:3000/landmarks`,{
-        method: 'POST',
-        headers:{
-          'content-type':'application/json'
-        },
-        body: JSON.stringify(newLandmark)
-      })
-      .then(res => res.json())
-      .then(data =>{
+    const newLandmark = {
+      imageURL,
+      spot_name,
+      location,
+      average_cost,
+      travel_time,
+      visitor_per_year,
+      seasonality,
+      country_name,
+      email,
+      user,
+      description,
+    };
+    console.log(newLandmark);
+    form.reset();
+
+    //  send data to the server
+    fetch(`http://localhost:3000/landmarks`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newLandmark),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        if(data.insertedId){
+        if (data.insertedId) {
           Swal.fire({
-            title: 'Success!',
-            text: 'User Added successfully',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-          })
+            title: "Success!",
+            text: "User Added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
-      })
-    }
+      });
+  };
   return (
     <main>
       <div className=" max-w-[1320px] mx-auto">
@@ -172,7 +183,7 @@ const AddTouristSpot = () => {
                   <span className="label-text font-bold">User Email</span>
                 </div>
                 <input
-                defaultValue={user.email}
+                  defaultValue={user.email}
                   type="text"
                   name="email"
                   placeholder="Preferable season"
@@ -187,7 +198,7 @@ const AddTouristSpot = () => {
                   <span className="label-text font-bold">User Name</span>
                 </div>
                 <input
-                defaultValue={user.displayName}
+                  defaultValue={user.displayName}
                   type="text"
                   name="user"
                   placeholder="Fixed time schedule"
