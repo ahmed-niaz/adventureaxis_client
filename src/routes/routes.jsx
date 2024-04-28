@@ -10,6 +10,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import AllTouristSpots from "../pages/AllTouristSpots";
 import Details from "../pages/Details";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: ()=> fetch(`http://localhost:3000/landmarks`),
+        loader: () => fetch(`http://localhost:3000/landmarks`),
       },
 
       {
@@ -38,6 +39,7 @@ export const router = createBrowserRouter([
             <MyList />
           </ProtectedRoutes>
         ),
+        loader: () => fetch(`http://localhost:3000/lists`),
       },
       {
         path: "/register",
@@ -50,15 +52,18 @@ export const router = createBrowserRouter([
       {
         path: "/spots",
         element: <AllTouristSpots />,
-        loader: ()=> fetch(`http://localhost:3000/landmarks`),
+        loader: () => fetch(`http://localhost:3000/landmarks`),
       },
       {
-        path: '/details/:id',
-        element: <ProtectedRoutes>
-           <Details/>
-        </ProtectedRoutes>,
-        loader: ({params})=> fetch(`http://localhost:3000/landmarks/${params.id}`)
-      }
+        path: "/details/:id",
+        element: (
+          <ProtectedRoutes>
+            <Details />
+          </ProtectedRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/landmarks/${params.id}`),
+      },
     ],
   },
 ]);
