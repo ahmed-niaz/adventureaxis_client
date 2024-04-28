@@ -1,5 +1,9 @@
 import Swal from 'sweetalert2'
+import useAuth from '../hooks/useAuth';
 const AddTouristSpot = () => {
+  const {user} = useAuth()
+  console.log(user);
+
     const handleAddSpots = e =>{
         e.preventDefault()
         
@@ -168,10 +172,12 @@ const AddTouristSpot = () => {
                   <span className="label-text font-bold">User Email</span>
                 </div>
                 <input
+                defaultValue={user.email}
                   type="text"
                   name="email"
                   placeholder="Preferable season"
                   className="input input-bordered w-full"
+                  readOnly={user.email ? true : false}
                 />
               </label>
             </div>
@@ -181,10 +187,12 @@ const AddTouristSpot = () => {
                   <span className="label-text font-bold">User Name</span>
                 </div>
                 <input
+                defaultValue={user.displayName}
                   type="text"
                   name="user"
                   placeholder="Fixed time schedule"
                   className="input input-bordered w-full"
+                  readOnly
                 />
               </label>
             </div>

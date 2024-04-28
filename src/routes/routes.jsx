@@ -50,6 +50,7 @@ export const router = createBrowserRouter([
       {
         path: "/spots",
         element: <AllTouristSpots />,
+        loader: ()=> fetch(`http://localhost:3000/landmarks`),
       },
       {
         path: '/details/:id',
