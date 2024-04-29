@@ -10,6 +10,8 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import AllTouristSpots from "../pages/AllTouristSpots";
 import Details from "../pages/Details";
 import UpdateInfo from "../components/UpdateInfo";
+import AddCountryInfo from "../pages/AddCountryInfo";
+import Countries from "../components/Countries";
 
 export const router = createBrowserRouter([
   {
@@ -79,6 +81,15 @@ export const router = createBrowserRouter([
           fetch(
             `https://adventureaxis-server.vercel.app/landmarks/${params.id}`
           ),
+      },
+      {
+        path: "/add_country_info",
+        element: <AddCountryInfo />,
+      },
+      {
+        path: "/countries",
+        element: <Countries />,
+        
       },
     ],
   },

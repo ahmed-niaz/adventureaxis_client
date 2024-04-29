@@ -8,6 +8,7 @@ import Countries from "../components/Countries";
 
 const Home = () => {
   const landmarks = useLoaderData();
+
   return (
     <main>
       <Hero />
@@ -16,13 +17,11 @@ const Home = () => {
           <TouristSpots key={spot._id} spot={spot} />
         ))}
       </div>
-      {/* countries */}
-     <Countries/>
+      <Countries />
       {/* why people choose us */}
       <WhyUs />
       {/* testimonials */}
       <Testimonials />
-
     </main>
   );
 };
