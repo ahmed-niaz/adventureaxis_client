@@ -90,13 +90,15 @@ export const router = createBrowserRouter([
       {
         path: "/countries",
         element: <Countries />,
-        
       },
       {
-        path:'specific_country/:country_name',
-        element: <CountryTouristSpots/>,
-        loader: ({params})=> fetch(`http://localhost:3000/countries/${params.country_name}`)
-      }
+        path: "specific_country/:country_name",
+        element: <CountryTouristSpots />,
+        loader: ({ params }) =>
+          fetch(
+            `https://adventureaxis-server.vercel.app/countries/${params.country_name}`
+          ),
+      },
     ],
   },
 ]);

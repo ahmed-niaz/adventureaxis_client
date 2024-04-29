@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const CountryCard = ({ country }) => {
   const { imageURL, country_name, description } = country;
-  const handleFilter = country_name =>{
+  const handleFilter = (country_name) => {
     console.log(country_name);
-    fetch(`http://localhost:3000/countries/${country_name}`)
-    .then(res=>res.json())
-    .then(data => {
+    fetch(`https://adventureaxis-server.vercel.app/countries/${country_name}`)
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-    })
-  }
+      });
+  };
   return (
     <main>
       <div>
@@ -24,11 +24,14 @@ const CountryCard = ({ country }) => {
             </h2>
             <p className="text-sm font-bold ">{description}</p>
             <div className="card-actions justify-center">
-             <Link to={`specific_country/${country_name}`}>
-             <button onClick={()=>handleFilter(country_name)} className="btn glass w-full bg-[#165D66] text-white">
-                View Details
-              </button>
-             </Link>
+              <Link to={`specific_country/${country_name}`}>
+                <button
+                  onClick={() => handleFilter(country_name)}
+                  className="btn glass w-full bg-[#165D66] text-white"
+                >
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         </div>

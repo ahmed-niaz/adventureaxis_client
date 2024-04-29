@@ -3,10 +3,10 @@ import CountryCard from "./CountryCard";
 import { useEffect, useState } from "react";
 
 const Countries = () => {
-  const [data, setData] = useState(null); 
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/countries`)
+    fetch(`https://adventureaxis-server.vercel.app/countries`)
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -17,9 +17,10 @@ const Countries = () => {
     <main className="container mx-auto my-24">
       <h2>You Can Visit These Countries</h2>
       <div className="grid lg:grid-cols-3 gap-4">
-        {data && data.map((country) => ( 
-          <CountryCard key={country._id} country={country} />
-        ))}
+        {data &&
+          data.map((country) => (
+            <CountryCard key={country._id} country={country} />
+          ))}
       </div>
 
       <div className="mt-10 text-center text-sm font-bold hover:text-[#165D66] hover:text-xl transition-all">

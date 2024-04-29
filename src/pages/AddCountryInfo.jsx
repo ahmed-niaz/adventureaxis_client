@@ -17,7 +17,7 @@ const AddCountryInfo = () => {
     form.reset();
 
     // send to the server
-    fetch(`http://localhost:3000/countries`, {
+    fetch(`https://adventureaxis-server.vercel.app/countries`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
