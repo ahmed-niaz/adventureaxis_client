@@ -12,6 +12,7 @@ import Details from "../pages/Details";
 import UpdateInfo from "../components/UpdateInfo";
 import AddCountryInfo from "../pages/AddCountryInfo";
 import Countries from "../components/Countries";
+import CountryTouristSpots from "../components/CountryTouristSpots";
 
 export const router = createBrowserRouter([
   {
@@ -91,6 +92,11 @@ export const router = createBrowserRouter([
         element: <Countries />,
         
       },
+      {
+        path:'specific_country/:country_name',
+        element: <CountryTouristSpots/>,
+        loader: ({params})=> fetch(`http://localhost:3000/countries/${params.country_name}`)
+      }
     ],
   },
 ]);
