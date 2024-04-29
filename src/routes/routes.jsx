@@ -20,7 +20,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: () => fetch(`http://localhost:3000/landmarks`),
+        loader: () =>
+          fetch(`https://adventureaxis-server.vercel.app/landmarks`),
       },
 
       {
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
             <MyList />
           </ProtectedRoutes>
         ),
-        loader: () => fetch(`http://localhost:3000/lists`),
+        loader: () => fetch(`https://adventureaxis-server.vercel.app/lists`),
       },
       {
         path: "/register",
@@ -52,7 +53,8 @@ export const router = createBrowserRouter([
       {
         path: "/spots",
         element: <AllTouristSpots />,
-        loader: () => fetch(`http://localhost:3000/landmarks`),
+        loader: () =>
+          fetch(`https://adventureaxis-server.vercel.app/landmarks`),
       },
       {
         path: "/details/:id",
@@ -62,7 +64,9 @@ export const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/landmarks/${params.id}`),
+          fetch(
+            `https://adventureaxis-server.vercel.app/landmarks/${params.id}`
+          ),
       },
       {
         path: "/update/:id",
@@ -72,7 +76,9 @@ export const router = createBrowserRouter([
           </ProtectedRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/landmarks/${params.id}`),
+          fetch(
+            `https://adventureaxis-server.vercel.app/landmarks/${params.id}`
+          ),
       },
     ],
   },

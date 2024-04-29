@@ -36,7 +36,7 @@ const AddTouristSpot = () => {
     form.reset();
 
     //  send data to the server
-    fetch(`http://localhost:3000/landmarks`, {
+    fetch(`https://adventureaxis-server.vercel.app/landmarks`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

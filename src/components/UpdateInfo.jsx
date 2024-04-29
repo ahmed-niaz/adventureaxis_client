@@ -9,7 +9,7 @@ const UpdateInfo = () => {
 
   const [spots, setSpots] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:3000/lists/${id}`)
+    fetch(`https://adventureaxis-server.vercel.app/lists/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);
@@ -45,7 +45,7 @@ const UpdateInfo = () => {
       description,
     };
     console.log(updateSpots);
-    fetch(`http://localhost:3000/update/${id}`, {
+    fetch(`https://adventureaxis-server.vercel.app/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
