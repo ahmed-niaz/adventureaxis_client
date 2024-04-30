@@ -14,7 +14,7 @@ const Navbar = () => {
     if (e.target.checked) {
       setTheme("night");
     } else {
-      setTheme("corporate");
+      setTheme("light");
     }
   };
   const links = (

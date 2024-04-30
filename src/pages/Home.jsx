@@ -1,14 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Hero from "../components/Hero";
 import TouristSpots from "../components/TouristSpots";
 
 import Testimonials from "../components/Testimonials";
 import WhyUs from "../components/WhyUs";
 import Countries from "../components/Countries";
+import Loader from "../components/Loader";
 
 const Home = () => {
   const landmarks = useLoaderData();
-
+  const navigation = useNavigation();
+  if(navigation.state === "loading") return <Loader/>
   return (
     <main>
       <Hero />
