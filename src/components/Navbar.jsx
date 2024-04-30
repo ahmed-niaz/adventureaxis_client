@@ -109,8 +109,8 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link className="btn btn-ghost text-3xl font-jersey text-[#135D66] tracking-wide">
-            AdventureAxis
+          <Link className="btn btn-ghost font-extrabold text-4xl font-jersey text-[#135D66] tracking-wide">
+            Adventure <span className="text-black">Axis</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

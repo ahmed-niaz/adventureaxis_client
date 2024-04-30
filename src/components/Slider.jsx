@@ -58,7 +58,7 @@ const Slider = () => {
                 </div>
               </div>
 
-              <div className="w-1/2 p-4">
+              <div className="lg:w-1/2 p-4 ">
                 <img
                  className="h-full object-cover w-full rounded-xl"
                   src={slide1}
@@ -101,7 +101,7 @@ const Slider = () => {
                 </div>
               </div>
 
-              <div className="w-1/2 p-4">
+              <div className="lg:w-1/2 p-4 ">
                 <img
                   className="h-full object-cover w-full rounded-xl"
                   src={slide2}
@@ -144,7 +144,7 @@ const Slider = () => {
                 </div>
               </div>
 
-              <div className="w-1/2 p-4">
+              <div className="lg:w-1/2 p-4 ">
                 <img
                    className="h-full object-cover w-full rounded-xl"
                   src={slide3}
@@ -188,7 +188,7 @@ const Slider = () => {
               </div>
 
               {/* left */}
-              <div className="w-1/2 p-4">
+              <div className="lg:w-1/2 p-4 ">
                 <img
                   className="h-full object-cover w-full rounded-xl"
                   src={slide4}
@@ -231,7 +231,7 @@ const Slider = () => {
                 </div>
               </div>
 
-              <div className="w-1/2 p-4 ">
+              <div className="lg:w-1/2 p-4 ">
                 <img
                    className="h-full object-cover w-full rounded-xl"
                   src={slide5}
