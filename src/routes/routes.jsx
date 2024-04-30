@@ -85,7 +85,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add_country_info",
-        element: <AddCountryInfo />,
+        element: <ProtectedRoutes><AddCountryInfo /></ProtectedRoutes>,
       },
       {
         path: "/countries",

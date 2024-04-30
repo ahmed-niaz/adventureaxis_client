@@ -1,10 +1,13 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import Loader from "../components/Loader";
 
 const MyList = () => {
   const landmarks = useLoaderData();
+  const navigation = useNavigation();
+  if(navigation.state === "loading") return <Loader/>
   const [lists, setLists] = useState(landmarks);
   const { user } = useAuth();
 

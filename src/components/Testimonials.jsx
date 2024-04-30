@@ -7,7 +7,7 @@ import person3 from "../assets/icons/perosn3.jpg";
 const Testimonials = () => {
   return (
     <main>
-      <div className="bg-gray-50 p-4">
+      <div className="bg-gray-50 p-4 mb-10">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="rounded-lg bg-white shadow-xl p-8 space-y-4">

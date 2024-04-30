@@ -15,12 +15,12 @@ const Cards = ({ spot }) => {
   return (
     <main>
       <main>
-        <div className="card card-side bg-base-100 shadow-xl p-4 mt-2 mb-8 flex flex-col lg:flex-row w-11/12 lg:w-full mx-auto">
+        <div className="card card-side p-4 mt-2 mb-8 flex flex-col lg:flex-row w-11/12 lg:w-full mx-auto">
           <figure className="basis-0 lg:basis-3/6  rounded-2xl">
             <img className="w-full" src={imageURL} alt={imageURL} />
           </figure>
-          <figure className="basis-11/12 lg:basis-0  rounded-xl">
-            <img className="w-full" src={imageURL} alt={imageURL} />
+          <figure className="basis-11/12 lg:basis-0  rounded-2xl">
+            <img className="w-full rounded-2xl " src={imageURL} alt={imageURL} />
           </figure>
           <div className="card-body">
            <div className="flex flex-col items-start justify-center h-full gap-4">

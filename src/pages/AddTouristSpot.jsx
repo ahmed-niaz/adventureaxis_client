@@ -58,9 +58,8 @@ const AddTouristSpot = () => {
   };
   return (
     <main>
-      <div className=" max-w-[1320px] mx-auto">
-        <h2>Add Tourist Spots</h2>
-        <p></p>
+      <div className=" max-w-[1320px] mx-auto mt-6">
+      
         <form onSubmit={handleAddSpots}>
           <div className="flex lg:flex-row flex-col justify-center items-center  mx-[112px] gap-4">
             <div className="w-full">

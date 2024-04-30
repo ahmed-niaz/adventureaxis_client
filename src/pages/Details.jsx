@@ -1,12 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { IoLocationSharp } from "react-icons/io5";
 import { GiMoneyStack } from "react-icons/gi";
 import { MdEmail, MdOutlineTimeToLeave } from "react-icons/md";
 import { FaUserCheck } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
+import Loader from "../components/Loader";
 
 const Details = () => {
   const landmarks = useLoaderData();
+  const navigation = useNavigation();
+  if(navigation.state === "loading") return <Loader/>
   const {
     imageURL,
     spot_name,

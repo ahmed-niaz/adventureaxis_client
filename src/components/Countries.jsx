@@ -15,7 +15,7 @@ const Countries = () => {
 
   return (
     <main className="container mx-auto my-24">
-      <h2>You Can Visit These Countries</h2>
+      <h2 className="text-3xl text-center mb-10 font-extrabold">The Country You can explore with us</h2>
       <div className="grid lg:grid-cols-3 gap-4">
         {data &&
           data.map((country) => (
