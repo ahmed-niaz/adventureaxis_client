@@ -30,7 +30,8 @@
 * [React-icons](https://www.npmjs.com/package/react-icons)
 * [React-helmet](https://www.npmjs.com/package/react-helmet)
 * [React-hook-form](https://react-hook-form.com/get-started)
-
 * [React-spinner](https://www.davidhu.io/react-spinners/)
+* [lottie-react](https://lottiefiles.com/)
+* [react-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
 
 and so on.

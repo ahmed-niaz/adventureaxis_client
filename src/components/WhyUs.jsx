@@ -1,4 +1,5 @@
-
+import discount from '../../public/discount.json'
+import Lottie from "lottie-react";
 const WhyUs = () => {
     return (
       <main>
@@ -8,10 +9,13 @@ const WhyUs = () => {
         </p>
         <div className="divider w-9/12 mx-auto"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-          <div className=" space-y-2 my-8 py-14 bg-gray-50 rounded-2xl">
+          <div>
+         
             <div className="flex flex-col items-center justify-center text-[#165D66] font-extrabold">
               <span className="text-3xl"> upTo </span>
-              <span className="text-9xl">30%</span>
+              <div className='flex'>
+              <span className="text-9xl">30 </span> <span><Lottie animationData={discount} loop={true} /></span>
+              </div>
               <span className="text-4xl">discount</span>
             </div>
             <div className="w-9/12 mx-auto">
